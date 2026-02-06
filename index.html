@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Teste</title>
+    <link rel="stylesheet" href="/style/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    
+</head>
+<body>
+    <form method="post">
+        <img src="{{ url_for('static', filename='foto.jpeg') }}" alt="Foto" class="avatar">
+        <h1> Login </h1>
+        <form method="post">
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="senha" placeholder="Senha" required>
+        <button type="submit">Entrar</button>
+    </form>
+
+    <div id="modal-erro" class="modal">
+  <div class="modal-content">
+    <h3>Erro no login</h3>
+    <p>{{ erro }}</p>
+    <button onclick="fecharModal()">OK</button>
+  </div>
+</div>
+
+<script>
+function fecharModal() {
+  document.getElementById("modal-erro").style.display = "none";
+}
+</script>
+</body>
+</html>
